@@ -17,7 +17,7 @@
 </tr>
 <tr>
 	<td> <a href="sentinel-xss1.php?start=true">XSS1</a> </td>
-	<td> XSS with default PHP urldecode of $GET_[] </td>
+	<td> XSS with default PHP urldecode of $GET_ </td>
 </tr>
 <tr>
 	<td> <a href="sentinel-xss2.php?start=true">XSS2</a> </td>
