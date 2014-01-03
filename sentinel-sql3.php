@@ -27,7 +27,6 @@ if ($isStart == "true") {
 	issueRequest();
 } else {
  	include 'base-header.php';
-	include 'base-content.php';
 
 	$var_param = urldecode($_GET['vulnparam']);
 
@@ -46,6 +45,7 @@ if ($isStart == "true") {
 	} catch(PDOException $e) {
 	}
 
+	include 'base-content.php';
 	include 'base-footer.php';
 }
 

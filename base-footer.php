@@ -6,10 +6,11 @@
 	<div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
           <div class="list-group">
             <a href="sentinel-xss1.php?start=true" class="list-group-item">XSS1</a>
-            <a href="#" class="list-group-item">XSS2</a>
-            <a href="#" class="list-group-item">SQL1</a>
-            <a href="#" class="list-group-item">SQL2</a>
-            <a href="#" class="list-group-item">SQL3</a>
+            <a href="sentinel-xss2.php?start=true" class="list-group-item">XSS2</a>
+            <a href="sentinel-xss3.php?start=true" class="list-group-item">XSS3</a>
+            <a href="sentinel-sql1.php?start=true" class="list-group-item">SQL1</a>
+            <a href="sentinel-sql2.php?start=true" class="list-group-item">SQL2</a>
+            <a href="sentinel-sql3.php?start=true" class="list-group-item">SQL3</a>
           </div>
         </div><!--/span-->
 

@@ -5,7 +5,6 @@
         $var_paramname = "vulnparam";
         $var_paramtype = "get";
         $var_paramcontent = "unencoded (only GET url encoded)";
-        $var_output = $_GET['vulnparam'];
 ?>
 
 <h2>XSS</h2>
@@ -17,11 +16,15 @@
 </tr>
 <tr>
 	<td> <a href="sentinel-xss1.php?start=true">XSS1</a> </td>
-	<td> XSS with default PHP urldecode of $GET_ </td>
+	<td> XSS with default PHP urldecode of $GET_[] </td>
 </tr>
 <tr>
 	<td> <a href="sentinel-xss2.php?start=true">XSS2</a> </td>
 	<td> XSS in BASE64 encoded param </td>
+</tr>
+<tr>
+	<td> <a href="sentinel-xss2.php?start=true">XSS2</a> </td>
+	<td> XSS in HTML tag, default urldecode </td>
 </tr>
 </table>
 

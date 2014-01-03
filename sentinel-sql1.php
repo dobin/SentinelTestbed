@@ -27,7 +27,6 @@ if ($isStart == "true") {
 	issueRequest();
 } else {
  	include 'base-header.php';
-	include 'base-content.php';
 
 	$var_param = urldecode($_GET['vulnparam']);
  
@@ -37,7 +36,7 @@ if ($isStart == "true") {
 		$result = $file_db->query("SELECT name FROM users WHERE id='" . $var_param . "'"); 
 
 		foreach($result as $row) {
-			print "Username: <b>" . $row['name'] . "</b>";
+			$var_output = "Username: <b>" . $row['name'] . "</b>";
 		}
 
 	} catch(PDOException $e) {
@@ -45,6 +44,7 @@ if ($isStart == "true") {
 		echo $e->getMessage();
 	}
 
+	include 'base-content.php';
 	include 'base-footer.php';
 }
 
