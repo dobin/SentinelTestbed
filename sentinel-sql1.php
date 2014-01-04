@@ -38,10 +38,10 @@ if ($isStart == "true") {
 		foreach($result as $row) {
 			$var_output = "Username: <b>" . $row['name'] . "</b>";
 		}
-
 	} catch(PDOException $e) {
-		echo "FAIL: ";
-		echo $e->getMessage();
+		//echo "FAIL: ";
+		//echo $e->getMessage();
+		$var_output = $e->getMessage();
 	}
 
 	include 'base-content.php';
