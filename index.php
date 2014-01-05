@@ -23,7 +23,7 @@
 	<td> XSS in BASE64 encoded param </td>
 </tr>
 <tr>
-	<td> <a href="sentinel-xss2.php?start=true">XSS2</a> </td>
+	<td> <a href="sentinel-xss3.php?start=true">XSS3</a> </td>
 	<td> XSS in HTML tag, default urldecode </td>
 </tr>
 </table>
