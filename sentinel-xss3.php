@@ -13,8 +13,9 @@ function issueRequest() {
 	global $var_paramname;
 
 	$var_value = "http://www.google.ch";
+        $url = "http" . (!empty($_SERVER['HTTPS']) ? "s" : "") . "://" . $_SERVER['SERVER_NAME'] . $_SERVER['SCRIPT_NAME'];
 
-	$destination = "http://localhost/sentinel/" . $myname . "?" . $var_paramname . "=" . urlencode($var_value);
+	$destination = $url . "?" . $var_paramname . "=" . urlencode($var_value);
         header( 'Location: ' . $destination );
 	exit();
 }

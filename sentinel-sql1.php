@@ -14,7 +14,9 @@ function issueRequest() {
 
 	$var_value = "1";
 
-	$destination = "http://localhost/sentinel/" . $myname . "?" . $var_paramname . "=" . urlencode($var_value);
+	$url = "http" . (!empty($_SERVER['HTTPS']) ? "s" : "") . "://" . $_SERVER['SERVER_NAME'] . $_SERVER['SCRIPT_NAME'];
+	$destination = $url . "?" . $var_paramname . "=" . urlencode($var_value);
+
         header( 'Location: ' . $destination );
 	exit();
 }
