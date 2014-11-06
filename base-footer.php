@@ -12,6 +12,8 @@
             <a href="sentinel-sql2.php?start=true" class="list-group-item">SQL2</a>
             <a href="sentinel-sql3.php?start=true" class="list-group-item">SQL3</a>
             <a href="sentinel-sql4.php?start=true" class="list-group-item">SQL4</a>
+            <a href="sentinel-sql5.php?start=true" class="list-group-item">SQL5</a>
+            <a href="sentinel-sql6.php?start=true" class="list-group-item">SQL6</a>
           </div>
         </div><!--/span-->
 
