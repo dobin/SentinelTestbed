@@ -1,10 +1,10 @@
 <?php
-$myname = "sentinel-sql3.php";
-$var_title = "SQL3";
+$myname = "sentinel-sql6.php";
+$var_title = "SQL6";
 $var_description = "Boolean SQL attack";
 $var_paramname = "vulnparam";
 $var_paramtype = "get";
-$var_paramcontent = "string which gets inserted into SQL statement. Wrong users will not produce error. No SQL errors.";
+$var_paramcontent = "string which gets inserted into SQL statement. Wrong users will not produce error. No SQL errors. Advanced statement. Random output";
 
 $var_output = "";
 
@@ -42,6 +42,13 @@ if ($isStart == "true") {
 
 	} catch(PDOException $e) {
 	}
+
+	$rrr = "";
+	$r = rand(1, 101);
+	for($rr=0; $rr<$r; $rr++) {
+		$rrr .= " a";
+	}
+	$var_output .= "<br>Random: " . $rrr; 
 
 	include 'base-content.php';
 	include 'base-footer.php';

@@ -4,7 +4,7 @@ $var_title = "SQL2";
 $var_description = "Boolean SQL attack";
 $var_paramname = "vulnparam";
 $var_paramtype = "get";
-$var_paramcontent = "string which gets inserted into SQL statement. Wrong SQL statements will omit some output.";
+$var_paramcontent = "string which gets inserted into SQL statement. Not existing users throw error. No SQL error output.";
 
 $var_output = "";
 
@@ -12,7 +12,7 @@ function issueRequest() {
 	global $myname;
 	global $var_paramname;
 
-	$var_value = "1";
+	$var_value = "root";
         $url = "http" . (!empty($_SERVER['HTTPS']) ? "s" : "") . "://" . $_SERVER['SERVER_NAME'] . $_SERVER['SCRIPT_NAME'];
 
 	$destination = $url . "?" . $var_paramname . "=" . urlencode($var_value);
@@ -34,11 +34,16 @@ if ($isStart == "true") {
 	try {
 		$file_db = new PDO('sqlite:db/testdb.sqlite');
 		$file_db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		$result = $file_db->query("SELECT name FROM users WHERE id='" . $var_param . "'"); 
+		$result = $file_db->query("SELECT id FROM users WHERE name='" . $var_param . "'"); 
 
+		$var_output = "";
 		foreach($result as $row) {
-			$var_output = "Username: <b>" . $row['name'] . "</b>";
+			$var_output = "Username ID: <b>" . $row['id'] . "</b>";
 		}
+		if ($var_output == "") {
+			$var_output = "User not found";
+		}
+
 
 	} catch(PDOException $e) {
 	}

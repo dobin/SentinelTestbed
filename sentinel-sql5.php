@@ -1,10 +1,10 @@
 <?php
-$myname = "sentinel-sql3.php";
-$var_title = "SQL3";
+$myname = "sentinel-sql5.php";
+$var_title = "SQL5";
 $var_description = "Boolean SQL attack";
 $var_paramname = "vulnparam";
 $var_paramtype = "get";
-$var_paramcontent = "string which gets inserted into SQL statement. Wrong users will not produce error. No SQL errors.";
+$var_paramcontent = "string which gets inserted into SQL statement. Wrong users will not produce error. No SQL errors. More complicated statement";
 
 $var_output = "";
 
@@ -34,7 +34,7 @@ if ($isStart == "true") {
 	try {
 		$file_db = new PDO('sqlite:db/testdb.sqlite');
 		$file_db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		$result = $file_db->query("SELECT id FROM users WHERE name='" . $var_param . "'"); 
+		$result = $file_db->query("SELECT id FROM users WHERE (name='" . $var_param . "' AND id >= 0)"); 
 
 		foreach($result as $row) {
 			$var_output = "Username ID: <b>" . $row['id'] . "</b>";

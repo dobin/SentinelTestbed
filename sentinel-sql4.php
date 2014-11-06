@@ -1,10 +1,10 @@
 <?php
-$myname = "sentinel-sql3.php";
-$var_title = "SQL3";
-$var_description = "Boolean SQL attack";
+$myname = "sentinel-sql4.php";
+$var_title = "SQL4";
+$var_description = "Blind SQL attack";
 $var_paramname = "vulnparam";
 $var_paramtype = "get";
-$var_paramcontent = "string which gets inserted into SQL statement. Wrong users will not produce error. No SQL errors.";
+$var_paramcontent = "string which gets inserted into SQL statement. Wrong SQL statements wont change output";
 
 $var_output = "";
 
@@ -12,9 +12,9 @@ function issueRequest() {
 	global $myname;
 	global $var_paramname;
 
-	$var_value = "root";
+	$var_value = "1";
         $url = "http" . (!empty($_SERVER['HTTPS']) ? "s" : "") . "://" . $_SERVER['SERVER_NAME'] . $_SERVER['SCRIPT_NAME'];
-
+        
 	$destination = $url . "?" . $var_paramname . "=" . urlencode($var_value);
         header( 'Location: ' . $destination );
 	exit();
@@ -30,14 +30,17 @@ if ($isStart == "true") {
  	include 'base-header.php';
 
 	$var_param = urldecode($_GET['vulnparam']);
- 
+
+	echo "No Output";
+
 	try {
 		$file_db = new PDO('sqlite:db/testdb.sqlite');
 		$file_db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		$result = $file_db->query("SELECT id FROM users WHERE name='" . $var_param . "'"); 
+		$result = $file_db->query("SELECT name FROM users WHERE id='" . $var_param . "'"); 
 
 		foreach($result as $row) {
-			$var_output = "Username ID: <b>" . $row['id'] . "</b>";
+			$bla = md5($row); // Do some light processing...
+//			print "Username: <b>" . $row['name'] . "</b>";
 		}
 
 	} catch(PDOException $e) {

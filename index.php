@@ -42,11 +42,15 @@
 </tr>
 <tr>
 	<td> <a href="sentinel-sql2.php?start=true">SQL2</a> </td>
-	<td> Boolean SQL attack </td>
+	<td> Blind SQL attack - error msg on invalid param </td>
 </tr>
 <tr>
 	<td> <a href="sentinel-sql3.php?start=true">SQL3</a> </td>
-	<td> Blind SQL attack </td>
+	<td> Blind SQL attack - no error msg on invalid param </td>
+</tr>
+<tr>
+	<td> <a href="sentinel-sql3.php?start=true">SQL4</a> </td>
+	<td> Really Blind SQL attack </td>
 </tr>
 
 
