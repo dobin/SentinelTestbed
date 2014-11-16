@@ -37,7 +37,6 @@ if ($isStart == "true") {
 		$result = $file_db->exec("UPDATE users SET pw='" . $var_param . "' WHERE id=666");
 		$file_db = null; 
 	} catch(PDOException $e) {
-		$var_output = $e->getMessage();
 	}
 	
 	try {
@@ -45,7 +44,7 @@ if ($isStart == "true") {
 		$file_db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$result = $file_db->query("SELECT pw FROM users WHERE id=666"); 
 		foreach($result as $row) {
-			$var_output .= "PW for ID 666: <b>" . $row['pw'] . "</b>";
+			$var_output = "PW for ID 666: <b>" . $row['pw'] . "</b>";
 		}
 	} catch(PDOException $e) {
 	}
