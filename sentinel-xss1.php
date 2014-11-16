@@ -26,6 +26,12 @@ if ($isStart == "true") {
 	issueRequest();
 } else {
 	$var_output = urldecode($_GET['vulnparam']);
+/*
+	$a = urldecode($_GET['vulnparam']);
+	$a = strip_tags($a);
+
+$var_output = '<a id="ctl84_ContactsGridView_ctl11_lkbGVRow" href="javascript:__doPostBack(\'ctl84$ContactsGridView$ctl11$lkbGVRow\',\'\')">' . $a . '</a>';
+*/
  	include 'base-header.php';
 	include 'base-content.php';
 	include 'base-footer.php';

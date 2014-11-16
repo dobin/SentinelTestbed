@@ -49,11 +49,25 @@
 	<td> Blind SQL attack - no error msg on invalid param </td>
 </tr>
 <tr>
-	<td> <a href="sentinel-sql3.php?start=true">SQL4</a> </td>
+	<td> <a href="sentinel-sql4.php?start=true">SQL4</a> </td>
 	<td> Really Blind SQL attack </td>
 </tr>
-
-
+<tr>
+	<td> <a href="sentinel-sql5.php?start=true">SQL5</a> </td>
+	<td> Blind SQL attack - no error msg on invalid param, AND statement </td>
+</tr>
+<tr>
+	<td> <a href="sentinel-sql6.php?start=true">SQL6</a> </td>
+	<td> Blind SQL attack - no error msg on invalid param, Random output </td>
+</tr>
+<tr>
+	<td> <a href="sentinel-sql7.php?start=true">SQL7</a> </td>
+	<td> Blind SQL attack - no error msg on invalid param, UPDATE </td>
+</tr>
+<tr>
+	<td> <a href="sentinel-sql8.php?start=true">SQL8</a> </td>
+	<td> Blind SQL attack - POST, needs invalid encoding </td>
+</tr>
 </table>
 
 
