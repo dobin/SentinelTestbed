@@ -9,6 +9,7 @@ footer {
   padding: 30px 0;
 }
 
+
 /*
  * Off Canvas
  * --------------------------------------------------
@@ -47,6 +48,11 @@ footer {
 }
 
 
+.borders {
+	border-style: solid;
+	border-width: 1px;
+	border-color: black;
+}
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,

@@ -1,6 +1,6 @@
         <h2> <?php echo $var_title ?>  </h2>
 
-        <table class="table">
+        <table id="mytable" class="table">
                 <tr>
                         <td> Description: </td>
                         <td> <?php echo $var_description ?> </td>

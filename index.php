@@ -11,10 +11,6 @@
 
 <table class="table">
 <tr>
-	<th> Name </th>
-	<th> Description </th>
-</tr>
-<tr>
 	<td> <a href="sentinel-xss1.php?start=true">XSS1</a> </td>
 	<td> XSS with default PHP urldecode of $GET_[] </td>
 </tr>
@@ -33,20 +29,16 @@
 
 <table class="table">
 <tr>
-	<th> Name </th>
-	<th> Description </th>
-</tr>
-<tr>
 	<td> <a href="sentinel-sql1.php?start=true">SQL1</a> </td>
-	<td> Default SQL attack with error message </td>
+	<td> Default SQL attack: Int, with SQL error message on invalid statement</td>
 </tr>
 <tr>
 	<td> <a href="sentinel-sql2.php?start=true">SQL2</a> </td>
-	<td> Blind SQL attack - error msg on invalid param </td>
+	<td> Blind SQL attack - explicit webapp msg on invalid param </td>
 </tr>
 <tr>
 	<td> <a href="sentinel-sql3.php?start=true">SQL3</a> </td>
-	<td> Blind SQL attack - no error msg on invalid param </td>
+	<td> Blind SQL attack - no explicit webapp error msg on invalid param </td>
 </tr>
 <tr>
 	<td> <a href="sentinel-sql4.php?start=true">SQL4</a> </td>
@@ -68,8 +60,21 @@
 	<td> <a href="sentinel-sql8.php?start=true">SQL8</a> </td>
 	<td> Blind SQL attack - POST, needs invalid encoding </td>
 </tr>
+<tr>
+	<td> <a href="sentinel-sql9.php?start=true">SQL9</a> </td>
+	<td> Blind SQL attack - Empty reponse on invalid sql statement </td>
+</tr>
 </table>
 
+
+<h2>CMD</h2>
+
+<table class="table">
+<tr>
+	<td> <a href="sentinel-cmd1.php?start=true">SQL1</a> </td>
+	<td> Fake command injection with sleep </td>
+</tr>
+</table>
 
 <?php
 	include 'base-footer.php'
